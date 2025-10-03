@@ -1,265 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <title>Nicholas Cheok — Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nicholas Cheok - Developer & Robotics Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description"
+    content="Portfolio of Nicholas Cheok — robotics & IoT projects, achievements, and contact." />
+  <meta name="keywords"
+    content="Nicholas Cheok, portfolio, robotics, IoT, Raspberry Pi, ESP32, OpenCV, Python, TypeScript" />
+
+  <!-- Canonical + Social -->
+  <link rel="canonical" href="https://your-domain.com/">
+  <meta property="og:title" content="Nicholas Cheok — Portfolio">
+  <meta property="og:description" content="Robotics & IoT projects, case studies, and achievements.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com/">
+  <meta property="og:image" content="https://your-domain.com/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts (preload for perf) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nicholas Cheok",
+    "url": "https://your-domain.com/",
+    "email": "mailto:nicholascheok816@gmail.com",
+    "jobTitle": "Robotics & IoT Developer",
+    "sameAs": [
+      "https://github.com/yourusername",
+      "https://www.linkedin.com/in/yourprofile"
+    ]
+  }
+  </script>
 </head>
+
 <body>
-  <!-- Animated background -->
-  <div class="bg-animation"></div>
-  
-  <!-- Floating particles -->
-  <div class="particles"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header>
-    <nav class="nav">
-      <div class="nav-left">
-        <a href="#hero" class="logo">Nicholas</a>
-      </div>
-      
-      <button id="hamburger" class="hamburger" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">NC</span>
+        <span class="brand-text">Nicholas Cheok</span>
+      </a>
 
-      <ul class="nav-center" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      
-      <div class="nav-right">
-        <button id="mode-toggle" class="btn-mode" aria-label="Toggle dark mode">
-          <i class="fas fa-moon"></i>
+      <nav aria-label="Primary">
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-list"
+          aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
         </button>
-        <a href="NIcholas Cheok Han Leng_Resume.pdf" target="_blank" class="btn-cv">
-          <i class="fas fa-download"></i>
-          <span>Resume</span>
-        </a>
-      </div>
-    </nav>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="divider" aria-hidden="true"></li>
+          <li>
+            <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="Toggle dark mode">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <!-- Uses your actual uploaded filename with spaces/caps preserved -->
+            <a class="btn btn-primary btn-resume" href="NIcholas Cheok Han Leng_Resume.pdf" target="_blank"
+              rel="noopener">
+              Resume
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="progress" aria-hidden="true">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <div class="hero-content">
-        <div class="hero-badge fade-init">
-          <i class="fas fa-code"></i>
-          <span>Full Stack Developer</span>
-        </div>
-        <h1 class="hero-title fade-init">
-          Hi, I'm <span class="highlight gradient-text">Nicholas Cheok</span>
-        </h1>
-        <p class="hero-subtitle fade-init">
-          I craft digital experiences and robotic systems that solve real-world problems. 
-          Passionate about IoT, automation, and creating technology that makes a difference.
-        </p>
-        <div class="hero-stats fade-init">
-          <div class="stat-item">
-            <div class="stat-number">15+</div>
-            <div class="stat-label">Projects</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">3+</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">10k+</div>
-            <div class="stat-label">Downloads</div>
-          </div>
-        </div>
-        <div class="hero-cta fade-init">
-          <a href="#projects" class="btn-primary">
-            <span>View My Work</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="#contact" class="btn-secondary">
-            <span>Get In Touch</span>
-          </a>
-        </div>
-      </div>
-      <div class="hero-visual fade-init">
-        <div class="floating-element" style="--delay: 0s;">
-          <i class="fas fa-robot"></i>
-        </div>
-        <div class="floating-element" style="--delay: 1s;">
-          <i class="fas fa-microchip"></i>
-        </div>
-        <div class="floating-element" style="--delay: 2s;">
-          <i class="fas fa-code-branch"></i>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section-about">
-      <div class="section-header">
-        <h2 class="fade-init">
-          <span class="section-number">01.</span> 
-          <span class="section-title">About Me</span>
-        </h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-content fade-init">
-          <p class="about-intro">
-            I'm a passionate developer and robotics enthusiast with a drive for innovation. 
-            My journey began with curiosity about how things work, leading me to explore the 
-            intersection of hardware and software.
+  <main id="main" tabindex="-1">
+    <!-- HERO -->
+    <section id="home" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Robotics • IoT • Software</p>
+          <h1 class="headline">I build reliable robots & intelligent systems.</h1>
+          <p class="lede">
+            I’m Nicholas — I design, code, and ship systems across hardware and software:
+            from ESP32 sensors and Raspberry Pi vision to clean web dashboards.
           </p>
-          <p>
-            Currently pursuing Computer Science while building projects that challenge conventional 
-            boundaries. I specialize in IoT systems, web development, and autonomous robotics, 
-            always seeking to create solutions that have real-world impact.
-          </p>
-          <div class="tech-stack">
-            <h3>Technologies I work with:</h3>
-            <div class="tech-grid">
-              <div class="tech-item"><i class="fab fa-js"></i> JavaScript</div>
-              <div class="tech-item"><i class="fab fa-python"></i> Python</div>
-              <div class="tech-item"><i class="fab fa-react"></i> React</div>
-              <div class="tech-item"><i class="fab fa-node-js"></i> Node.js</div>
-              <div class="tech-item"><i class="fas fa-microchip"></i> Arduino</div>
-              <div class="tech-item"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</div>
-            </div>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-ghost" href="mailto:nicholascheok816@gmail.com">Email Me</a>
           </div>
+
+          <ul class="quick-stats" aria-label="Key stats">
+            <li><span class="stat" data-count="10">0</span><span class="label">Projects</span></li>
+            <li><span class="stat" data-count="5">0</span><span class="label">Competitions</span></li>
+            <li><span class="stat" data-count="3">0</span><span class="label">Leadership Roles</span></li>
+          </ul>
         </div>
-        <div class="about-visual fade-init">
-          <div class="skill-orbit">
-            <div class="orbit-center">
-              <i class="fas fa-user-astronaut"></i>
-            </div>
-            <div class="orbit-item" style="--angle: 0deg;">
-              <i class="fas fa-code"></i>
-            </div>
-            <div class="orbit-item" style="--angle: 72deg;">
-              <i class="fas fa-robot"></i>
-            </div>
-            <div class="orbit-item" style="--angle: 144deg;">
-              <i class="fas fa-brain"></i>
-            </div>
-            <div class="orbit-item" style="--angle: 216deg;">
-              <i class="fas fa-rocket"></i>
-            </div>
-            <div class="orbit-item" style="--angle: 288deg;">
-              <i class="fas fa-lightbulb"></i>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="card hero-card">
+            <div class="avatar">NC</div>
+            <div class="hero-tags">
+              <span>Python</span><span>TypeScript</span><span>ESP32</span><span>OpenCV</span>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Highlights bar -->
+      <div class="container highlights">
+        <div class="highlight"><span>🎓</span> Edusave Scholarship (2021–2023)</div>
+        <div class="highlight"><span>🤖</span> WRO 2023 — Global Rank #19</div>
+        <div class="highlight"><span>🏆</span> FLL 2023 — Robot Performance Award</div>
+      </div>
+
+      <!-- Decorative gradient -->
+      <div class="hero-bg" aria-hidden="true"></div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section-projects">
-      <div class="section-header">
-        <h2 class="fade-init">
-          <span class="section-number">02.</span> 
-          <span class="section-title">Featured Projects</span>
-        </h2>
-        <p class="section-subtitle fade-init">
-          A showcase of my recent work in development and robotics
-        </p>
-      </div>
-      <div id="project-list" class="project-grid"></div>
-    </section>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>About</h2>
+          <p>A short, relevant snapshot.</p>
+        </header>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="section-achievements">
-      <div class="section-header">
-        <h2 class="fade-init">
-          <span class="section-number">03.</span> 
-          <span class="section-title">Achievements & Recognition</span>
-        </h2>
-      </div>
-      <div id="achievement-list" class="achievement-grid"></div>
-    </section>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              I’m a robotics & IoT developer who enjoys turning real-world constraints into
+              robust, testable systems. I’ve led teams, competed internationally, and built
+              full-stack dashboards for hardware in the loop.
+            </p>
+            <p>
+              Interests: embedded systems, computer vision, telemetry dashboards, and teaching robotics.
+            </p>
+            <div class="about-links">
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub →</a>
+              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn →</a>
+            </div>
+          </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-contact">
-      <div class="section-header">
-        <h2 class="fade-init">
-          <span class="section-number">04.</span> 
-          <span class="section-title">Let's Connect</span>
-        </h2>
-      </div>
-      
-      <div class="contact-content fade-init">
-        <p class="contact-description">
-          I'm always excited to collaborate on innovative projects or discuss new opportunities. 
-          Whether you're interested in IoT solutions, web development, or robotics, let's create something amazing together!
-        </p>
-        
-        <div class="contact-methods">
-          <a href="mailto:nicholascheok816@gmail.com" class="contact-link email">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="contact-info">
-              <span class="contact-label">Email</span>
-              <span class="contact-value">nicholascheok816@gmail.com</span>
-            </div>
-          </a>
-          
-          <a href="https://github.com/yourusername" target="_blank" class="contact-link github">
-            <div class="contact-icon">
-              <i class="fab fa-github"></i>
-            </div>
-            <div class="contact-info">
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">github.com/yourusername</span>
-            </div>
-          </a>
-          
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link linkedin">
-            <div class="contact-icon">
-              <i class="fab fa-linkedin"></i>
-            </div>
-            <div class="contact-info">
-              <span class="contact-label">LinkedIn</span>
-              <span class="contact-value">linkedin.com/in/yourprofile</span>
-            </div>
-          </a>
+          <div class="stack-card card">
+            <h3 class="subhead">Core Stack</h3>
+            <ul class="stack">
+              <li><span>Python</span><em>OpenCV, FastAPI</em></li>
+              <li><span>TypeScript</span><em>React, Node</em></li>
+              <li><span>IoT</span><em>ESP32, Raspberry Pi</em></li>
+              <li><span>Cloud</span><em>Firebase, Supabase</em></li>
+              <li><span>Data</span><em>Postgres, SQLite</em></li>
+              <li><span>Other</span><em>3D Printing, PID</em></li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="contact-form-container">
-          <form class="contact-form" id="contact-form">
-            <div class="form-group">
-              <input type="text" id="name" name="name" placeholder="Your Name" required>
-              <label for="name">Name</label>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Projects</h2>
+          <p>Selected work with short context and outcomes. Each has a case study.</p>
+        </header>
+
+        <div id="project-grid" class="project-grid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Achievements</h2>
+          <p>Recognition across academics, leadership, and competitions.</p>
+        </header>
+
+        <div id="achievements-grid" class="achievements-grid"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-contrast">
+      <div class="container">
+        <header class="section-head">
+          <h2>Contact</h2>
+          <p>Keen to collaborate on robotics, IoT, or education projects.</p>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-cards">
+            <a class="contact-card card" href="mailto:nicholascheok816@gmail.com">
+              <span class="icon" aria-hidden="true">✉️</span>
+              <div>
+                <div class="title">Email</div>
+                <div class="desc">nicholascheok816@gmail.com</div>
+              </div>
+            </a>
+            <a class="contact-card card" href="https://github.com/yourusername" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden="true">🐙</span>
+              <div>
+                <div class="title">GitHub</div>
+                <div class="desc">github.com/yourusername</div>
+              </div>
+            </a>
+            <a class="contact-card card" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden="true">💼</span>
+              <div>
+                <div class="title">LinkedIn</div>
+                <div class="desc">linkedin.com/in/yourprofile</div>
+              </div>
+            </a>
+          </div>
+
+          <form id="contact-form" class="card contact-form" novalidate>
+            <div class="grid">
+              <label class="field">
+                <span>Name</span>
+                <input id="name" name="name" type="text" placeholder="Your name" required autocomplete="name">
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required autocomplete="email"
+                  inputmode="email">
+              </label>
             </div>
-            <div class="form-group">
-              <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-              <label for="email">Email</label>
-            </div>
-            <div class="form-group">
-              <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
-              <label for="message">Message</label>
-            </div>
-            <button type="submit" class="btn-submit">
-              <span>Send Message</span>
-              <i class="fas fa-paper-plane"></i>
-            </button>
+            <label class="field">
+              <span>Message</span>
+              <textarea id="message" name="message" placeholder="What would you like to build?" required
+                rows="5"></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit"><span class="btn-spinner" aria-hidden="true"></span>Send
+              Message</button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <p>© 2025 Nicholas Cheok. Crafted with passion and precision.</p>
-      <div class="footer-links">
-        <a href="#hero">Back to Top <i class="fas fa-arrow-up"></i></a>
-      </div>
+  <!-- Scroll to top FAB -->
+  <button id="to-top" class="to-top-fab" aria-label="Back to top">↑</button>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Nicholas Cheok</p>
+      <a class="to-top" href="#home" aria-label="Back to top">Back to top ↑</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
+
 </html>
